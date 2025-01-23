@@ -1,6 +1,6 @@
 # 📚 System Zarządzania Biblioteką
 
-Projekt System Zarządzania Biblioteką został zrealizowany jako część zaliczenia przedmiotu Bazy Danych na studiach. Głównym celem projektu było zaprojektowanie, zaimplementowanie i zintegrowanie relacyjnej bazy danych z aplikacją napisaną w języku Python. Baza danych została utworzona w środowisku MariaDB, natomiast Python posłużył jako narzędzie do komunikacji z bazą oraz obsługi logiki aplikacji.
+Projekt Systemu Biblioteki został zrealizowany jako część zaliczenia przedmiotu Bazy Danych na studiach. Głównym celem projektu było zaprojektowanie, zaimplementowanie i zintegrowanie relacyjnej bazy danych z aplikacją napisaną w języku Python. Baza danych została utworzona w środowisku MariaDB, natomiast Python posłużył jako narzędzie do komunikacji z bazą oraz obsługi logiki aplikacji.
 
 ![menu](assets/menu.gif)
 ---
