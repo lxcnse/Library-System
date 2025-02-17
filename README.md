@@ -11,21 +11,21 @@ The Library Management System project was developed as part of the Database Syst
 
 ### 1. **User Registration and Login**
 
-- Registration and verification of unique users.
-- Automatic membership assignment (standard or premium).
+- Registration and verification of unique users
+- Automatic membership assignment (standard or premium)
 
 ### 2. **Book and Loan Management**
 
-- Handling book loans, returns, and donations. 
-- Automatic fine calculation for overdue books.
+- Handling book loans, returns, and donations 
+- Automatic fine calculation for overdue books
 
 ### 3. **Viewing and Adding Reviews**
 
-- Adding ratings (1–5) and book reviews.
-- The `all_reviews` view displays all user reviews.
+- Adding ratings (1–5) and book reviews
+- The `all_reviews` view displays all user reviews
 
 ### 4. **Book Recommendation**
-The `recommend_books` procedure generates book recommendations for the user based on ratings, loan history, and genre preferences.
+The `recommend_books` procedure generates book recommendations for the user based on ratings, loan history, and genre preferences
 
 - Selects the top 5 genres by weight
    ```sql
