@@ -49,17 +49,17 @@ The `recommend_books` procedure generates book recommendations for the user base
 - **fines**: fine calculation
 - **ratings**: user ratings and reviews
 
-### Procedury:
+### Procedures:
 
 - **`register_user`**: register a new user
 - **`fetch_unrated_books`**: list of borrowed books not yet rated
 - **`recommend_books`**: book recommendation algorithm
 
-### Zdarzenia:
+### Events:
 
 - **`update_fines`**: automatic fine calculation for overdue books
 
-### Widoki:
+### Views:
 
 - **`all_reviews`**: displays user reviews and ratings
 - **`standard_user_loans`** i **`premium_user_loans`**: loan statistics for standard and premium users
