@@ -1,33 +1,33 @@
-# 📚 System Zarządzania Biblioteką
+# 📚 Library Management System
 
-Projekt Systemu Biblioteki został zrealizowany jako część zaliczenia przedmiotu Bazy Danych na studiach. Głównym celem projektu było zaprojektowanie, zaimplementowanie i zintegrowanie relacyjnej bazy danych z aplikacją napisaną w języku Python. Baza danych została utworzona w środowisku MariaDB, natomiast Python posłużył jako narzędzie do komunikacji z bazą oraz obsługi logiki aplikacji.
+The Library Management System project was developed as part of the Database Systems course at university. The main goal of the project was to design, implement, and integrate a relational database with an application written in Python. The database was created in the MariaDB environment, while Python served as the tool for communication with the database and handling the application logic.
 
 ![menu](assets/menu.gif)
 ---
 ## 🗺️ Diagram
 ![diagram](assets/diagram.png)
 ---
-## 📋 Funkcjonalność
+## 📋 Functionality
 
-### 1. **Rejestracja i logowanie użytkowników**
+### 1. **User Registration and Login**
 
-- Rejestracja i weryfikacja unikalności użytkowników.
-- Automatyczne przypisywanie członkostwa (standardowe lub premium).
+- Registration and verification of unique users.
+- Automatic membership assignment (standard or premium).
 
-### 2. **Zarządzanie książkami i wypożyczeniami**
+### 2. **Book and Loan Management**
 
-- Obsługa wypożyczeń, zwrotów oraz dotacji książek. 
-- Automatyczne naliczanie kar za przetrzymanie.
+- Handling book loans, returns, and donations. 
+- Automatic fine calculation for overdue books.
 
-### 3. **Przeglądanie i dodawanie recenzji.**
+### 3. **Viewing and Adding Reviews**
 
-- Dodawanie ocen (1–5) i recenzji książek.
-- Widok `all_reviews` wyświetla wszystkie recenzje użytkowników.
+- Adding ratings (1–5) and book reviews.
+- The `all_reviews` view displays all user reviews.
 
-### 4. **Rekomendacja książek**
-Procedura `recommend_books` generuje rekomendacje książek dla użytkownika na podstawie ocen, historii wypożyczeń i preferencji gatunkowych.
+### 4. **Book Recommendation**
+The `recommend_books` procedure generates book recommendations for the user based on ratings, loan history, and genre preferences.
 
-- Wybiera 5 gatunków o najwiekszej wadze
+- Selects the top 5 genres by weight
    ```sql
    SELECT b.genre_id
    FROM loans l
@@ -35,46 +35,41 @@ Procedura `recommend_books` generuje rekomendacje książek dla użytkownika na 
    WHERE l.user_id = p_user_id
    GROUP BY b.genre_id
    ORDER BY COUNT(*) / (SELECT COUNT(*) FROM loans WHERE user_id = p_user_id) DESC
-   LIMIT 5
-   ```
-- Filtruje według preferowanych gatunków
-- Zwraca posortowane malejąco książki o średniej ocenie wiekszej niż 3.5
-
-
-
+   LIMIT 5```
+   
 ---
 
-## 📄 Kluczowe elementy projektu
+## 📄 Key Project Elements
 
-### Tabele w bazie danych:
+### Database Tables:
 
-- **users**: informacje o użytkownikach.
-- **books**: zarządzanie książkami.
-- **loans**: obsługa wypożyczeń.
-- **fines**: naliczanie kar.
-- **ratings**: oceny i recenzje użytkowników.
+- **users**: user information
+- **books**: book management
+- **loans**: handling book loans
+- **fines**: fine calculation
+- **ratings**: user ratings and reviews
 
 ### Procedury:
 
-- **`register_user`**: rejestracja nowego użytkownika.
-- **`fetch_unrated_books`**: lista książek wypożyczonych, ale jeszcze nieocenionych.
-- **`recommend_books`**: algorytm rekomendacji książek.
+- **`register_user`**: register a new user
+- **`fetch_unrated_books`**: list of borrowed books not yet rated
+- **`recommend_books`**: book recommendation algorithm
 
 ### Zdarzenia:
 
-- **`update_fines`**: automatyczne naliczanie kar za przetrzymanie książek.
+- **`update_fines`**: automatic fine calculation for overdue books
 
 ### Widoki:
 
-- **`all_reviews`**: wyświetla recenzje i oceny użytkowników.
-- **`standard_user_loans`** i **`premium_user_loans`**: statystyki wypożyczeń.
+- **`all_reviews`**: displays user reviews and ratings
+- **`standard_user_loans`** i **`premium_user_loans`**: loan statistics for standard and premium users
 
 ---
-## 🛠️ Wymagania techniczne
+## 🛠️ Technical Requirements
 
-1. **MariaDB 10.3 lub nowsza**
+1. **MariaDB 10.3 or newer**
 
-2. **Python 3.8 lub nowszy**
-   - Kluczowe biblioteki:
+2. **Python 3.8 or newer**
+   - Key libraries:
      - `mysql-connector-python`
      - `tkinter`
