@@ -7,69 +7,20 @@ The Library Management System project was developed as part of the Database Syst
 ## 🗺️ Diagram
 ![diagram](assets/diagram.png)
 ---
-## 📋 Functionality
 
-### 1. **User Registration and Login**
+## ✨ Features
 
-- Registration and verification of unique users
-- Automatic membership assignment (standard or premium)
+- 🔐 User Authentication (Login/Register)
+- 📖 Issue, Return & Donate Books
+- ⭐ Add and Browse Reviews
+- 💸 Check Fines
+- 📨 Notifications for users
+- 📚 Book Recommendations (based on stored procedure logic)
+- 🎨 Clean and styled UI with hover effects
 
-### 2. **Book and Loan Management**
+## 🛠️ Technologies
 
-- Handling book loans, returns, and donations 
-- Automatic fine calculation for overdue books
-
-### 3. **Viewing and Adding Reviews**
-
-- Adding ratings (1–5) and book reviews
-- The `all_reviews` view displays all user reviews
-
-### 4. **Book Recommendation**
-The `recommend_books` procedure generates book recommendations for the user based on ratings, loan history, and genre preferences
-
-- Selects the top 5 genres by weight
-   ```sql
-   SELECT b.genre_id
-   FROM loans l
-   JOIN books b ON l.book_id = b.book_id
-   WHERE l.user_id = p_user_id
-   GROUP BY b.genre_id
-   ORDER BY COUNT(*) / (SELECT COUNT(*) FROM loans WHERE user_id = p_user_id) DESC
-   LIMIT 5```
-   
----
-
-## 📄 Key Project Elements
-
-### Database Tables:
-
-- **users**: user information
-- **books**: book management
-- **loans**: handling book loans
-- **fines**: fine calculation
-- **ratings**: user ratings and reviews
-
-### Procedures:
-
-- **`register_user`**: register a new user
-- **`fetch_unrated_books`**: list of borrowed books not yet rated
-- **`recommend_books`**: book recommendation algorithm
-
-### Events:
-
-- **`update_fines`**: automatic fine calculation for overdue books
-
-### Views:
-
-- **`all_reviews`**: displays user reviews and ratings
-- **`standard_user_loans`** i **`premium_user_loans`**: loan statistics for standard and premium users
-
----
-## 🛠️ Technical Requirements
-
-1. **MariaDB 10.3 or newer**
-
-2. **Python 3.8 or newer**
-   - Key libraries:
-     - `mysql-connector-python`
-     - `tkinter`
+- Python 3.x
+- Tkinter (GUI)
+- MySQL (Database)
+- MySQL Stored Procedures
