@@ -1,6 +1,6 @@
 # 📚 Library Management System
 
-The Library Management System project was developed as part of the Database Systems course at university. The main goal of the project was to design, implement, and integrate a relational database with an application written in Python. The database was created in the MariaDB environment, while Python served as the tool for communication with the database and handling the application logic.
+The library management system project was developed as a final credit project in a database course at the university. The main goal of the project was to design, implement, and integrate a relational database with an application written in Python. The database was created in the MariaDB environment, while Python served as the tool for communication with the database and handling the application logic.
 
 ![menu](assets/menu.gif)
 ---
