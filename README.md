@@ -20,7 +20,7 @@ The Library Management System project was developed as part of the Database Syst
 
 ## 🛠️ Technologies
 
-- Python 3.x
+- Python 3.13.1
 - Tkinter
-- MariaDB (Database)
+- MariaDB 11.4
 - `mysql-connector-python`
